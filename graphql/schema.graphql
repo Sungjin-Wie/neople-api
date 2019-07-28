@@ -1,0 +1,19 @@
+type Character {
+  characterId: String!
+  characterName: String!
+  level: Int!
+  jobId: String!
+  jobGrowId: String
+  jobName: String!
+  jobGrowName: String
+}
+
+type Query {
+  rows(characterName: String!): [Character]
+  status(characterId: String!): [Status]
+}
+
+type Status {
+  name: String!
+  value: Float!
+}

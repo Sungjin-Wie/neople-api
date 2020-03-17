@@ -6,4 +6,12 @@ const server = new GraphQLServer({
   resolvers
 });
 
-server.start(() => console.log("4000 포트에서 대기중"));
+const opts = {
+  port: 4000,
+  cors: {
+    credentials: true,
+    origin: ["https://dunpa.herokuapp.com"] // your frontend url.
+  }
+};
+
+server.start(opts, () => console.log("4000 포트에서 대기중"));
